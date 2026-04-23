@@ -11,8 +11,15 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-public class ImagesController {
 
+
+@RestController
+@RequestMapping("/upload")
+@Slf4j
+
+
+public class ImagesController {
+    //*
     // {"name": "", "size":100} //application/json
     //*
 
@@ -20,8 +27,8 @@ public class ImagesController {
     //*
 
     @PostMapping
-    public ResponseEntity uploadImage(@RequestParam("file")  MultipartFile file,
-                                      @RequestParam("name")String name,
+    public ResponseEntity uploadImage(@RequestParam("file") MultipartFile file,
+                                      @RequestParam("name") String name,
                                       @RequestParam("tags") List<String> tags
     ) {
         log.info("Recebendo tentativa de upload do arquivo: {}", file.getOriginalFilename());
