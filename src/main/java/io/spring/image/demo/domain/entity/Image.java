@@ -21,25 +21,23 @@ import java.time.LocalDateTime;
 public class Image {
 
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.UUID)
-        private String id;
-        @Column
-        private String name;
-        @Column
-        private Long size;
-        @Column
-        @Enumerated(EnumType.STRING)
-        private ImageExtension extension;
-        @Column
-        @CreatedDate
-        private LocalDateTime uploadDate;
-        @Column
-        private String tags;
-        @Column
-        @Lob
-        private byte[] file;
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
+    @Column
+    private String name;
+    @Column
+    private Long size;
+    @Column
+    @Enumerated(EnumType.STRING)
+    private ImageExtension extension;
+    @Column
+    @CreatedDate
+    private LocalDateTime uploadDate;
+    @Column
+    private String tags;
+    @Column
+    @Lob
+    private byte[] file;
 
-    }
-
-
+}
