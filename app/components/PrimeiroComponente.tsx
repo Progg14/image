@@ -1,28 +1,34 @@
 'use client';
 
+import {useRouter} from 'next/navigation';
+
 interface PrimeiroComponenteProps {
-  // Defina as propriedades do componente aqui, se necessário
   mensagem?: string;
-  mesagemBotao?: string; // Propriedade opcional
+  mensagemBotao?: string
 }
 
-export const PrimeiroComponente = ({ mensagem, mesagemBotao }: PrimeiroComponenteProps) => {
-
-  // function clique() { 
-  //   console.log('Você clicou no botão!');  //   alert('Você clicou no botão!');
-  // }
-
+export const PrimeiroComponente = ({ mensagem, mensagemBotao }: PrimeiroComponenteProps) => {
+  const router = useRouter();
   const clique = () => {
-    console.log('Você clicou no botão!');
-    alert(mesagemBotao); 
-  }
-  
-  return(
-    <div> 
-      <h1>Primeiro Componente</h1>
-      <p>{mensagem}</p>
-      <button onClick={clique}>Clique aqui!</button>
+    console.log('Botão Clicado...');
+    router.push('/Galeria');
 
+
+  }
+
+  return (
+    <div className="flex flex-col items-center justify-center gap-6 text-center w-full px-4 py-8">
+      {/* Corrigido de text-white-500 para text-sky-950 para ficar visível */}
+      <h1 className="text-2xl font-bold text-sky-950 animate-pulse">Botão Clicavel !</h1>
+
+      {mensagem && <p className="text-zinc-600 dark:text-zinc-300 font-medium">{mensagem}</p>}
+
+      <button
+        onClick={clique}
+        className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow-md transition-all active:scale-95 duration-200"
+      >
+        Clique Aqui!
+      </button>
     </div>
   );
-} 
+}

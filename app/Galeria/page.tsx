@@ -22,10 +22,11 @@ export default function Galeria() {
   function renderImageCard(image: Image ) {
     return (
       <ImageCard key = {image.url}
-                imageName = {image.name} 
+                 imageName = {image.name} 
                  imageUrl={image.url}
-                 imageSize = {`${image.size} MB`}
-                 uploadDate={image.uploadDate} />
+                 imageSize = {`${image.size}`}
+                 uploadDate={image.uploadDate}
+                 extension ={image.extension} />
     )
   }
 
