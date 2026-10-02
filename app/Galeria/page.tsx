@@ -51,7 +51,7 @@ export default function Galeria() {
                 <option value="JPEG">JPEG</option>
                 <option value="GIF">GIF</option>
               </select>
-              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" onClick={searchImages}>Search </button>
+              <button className="bg-white hover:bg-blue-600 text-black font-bold py-2 px-4 rounded" onClick={searchImages}>Search </button>
               <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Add New </button>
             </div>
         </section>
